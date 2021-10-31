@@ -1,0 +1,844 @@
+@import url('https://fonts.googleapis.com/css?family=Gamja+Flower'); /*font sử dụng*/
+
+html, body {
+    width: 100%; /*full màn*/
+    height: 100%; /*full màn*/
+    font-family: 'Arial';
+    font-size: 14px;
+}
+
+/*thanh navbar , màu a = 0.9 là độ trong, !important cho phép đè lên các phần tử bootraps*/
+.navbar {
+    background-color: rgba(255,255,255,0.8) !important;
+}
+/*thẻ a*/
+.navbar li a {
+    color: black!important;
+    margin-left: 5px;
+    margin-right: 50px;
+}
+/*hover là hành động khi di chuột vào thẻ a*/
+.navbar li a:hover {
+    color: black!important;
+}
+
+/* Dropdown menu background color*/
+
+.navbar-nav > li > .dropdown-menu {     background-color: rgba(225, 222, 255, 0.99);  }
+
+/* Dropdown menu font color*/ 
+
+ .navbar-nav > li > .dropdown-menu a{   color: #fff;  }
+.dropdown:hover .dropbtn {
+  background-color: #984eca;
+}
+
+/*chỉnh hình full*/
+.carousel-inner img {
+    width: 100%;
+}
+/*vị trí cứng, là cách phía trên 50%*/
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+}
+.carousel-caption h1 {
+    font-size: 300%;
+    text-transform: uppercase;
+    text-shadow: 5px 5px 15px #000;
+    margin-top: 270px;
+}
+.carousel-caption h3 {
+    font-size: 150%;    
+    text-shadow: 2px 2px 10px #000;
+}
+.btn-primary {
+    background-color: rgb(82,64,120);
+    border: 1px solid white;
+    animation-name: cd-bounce-rotate;
+    animation-duration: 1s;
+}
+.btn-primary:hover {
+    background-color: rgb(62,44,100);
+    border: 1px solid white;
+    animation-name: cd-bounce-rotate;
+    animation-duration: 1s;
+}
+.btn-success{
+    margin-left: -45px;
+}
+.jumbotron {
+    /*1 rem là 1 font size, không bo tròn*/
+    padding: 1rem;
+    border-radius: 0;
+
+}
+/* viền ở phía trên, solid là thẳng tắp*/
+.welcome hr {
+    border-top: 2px solid rgba(62,44,100, 0.6);
+    width: 95%; 
+    margin-bottom: 2rem;
+}
+
+
+.social a {
+    font-size: 3em;/*1em = 16px*/
+    padding: 3rem;/*1rem = 1 "font-size" */
+}
+.fa-facebook {
+    color: #3b5998;
+}
+.fa-twitter {
+    color: #00aced; 
+}
+.fa-google-plus-g {
+    color: #dd4b39;
+}
+.fa-instagram {
+    color: #517fa4;
+}
+.fa-youtube {
+    color: #bb0000;
+}
+footer {
+    background-color: #3f3f3f;
+    color: #d5d5d5;
+}
+hr.light {
+    border-top: 1px solid #d5d5d5;
+    width: 75%;
+}
+.light-100 {
+    border-top: 1px solid #d5d5d5;
+    width: 100%;
+}
+
+.list-menu-left{ 
+    min-width: 200px;
+    margin-left: -13px;
+    margin-bottom: -10px;
+    margin-top: 4px;
+}
+
+
+/* animation*/
+
+.cd-intro-content h1,
+.cd-intro-content p,
+.cd-intro-content h3,
+.cd-intro-content .cd-btn {
+  opacity: 0;
+  animation-delay: 0.3s;
+  animation-fill-mode: forwards;
+}
+
+.bouncy.cd-intro-content h1 {
+  animation-name: cd-bounce-right;
+}
+
+.bouncy.cd-intro-content p {
+  animation-name: cd-bounce-left;
+}
+
+.bouncy.cd-intro-content h3 {
+  animation-name: cd-bounce-left;
+}
+.bouncy.cd-intro-content p,
+.bouncy.cd-intro-content h1,
+.bouncy.cd-intro-content h3{
+  animation-duration: 0.6s;
+}
+
+.bouncy.cd-intro-content .cd-btn {
+  animation-name: cd-bounce-rotate;
+  animation-duration: 0.5s;
+}
+
+.bouncy.cd-intro-content .cd-btn.main-action {
+  animation-delay: 0.4s;
+}
+
+@keyframes cd-bounce-right {
+  0% {
+    opacity: .2;
+    transform: translateX(-200px);
+  }
+  60% {
+    opacity: .7;
+    transform: translateX(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes cd-bounce-left {
+  0% {
+    opacity: .2;
+    transform: translateX(200px);
+  }
+  60% {
+    opacity: .7;
+    transform: translateX(-15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes cd-bounce-rotate {
+  0% {
+    opacity: .2;
+    transform: perspective(800px) rotateX(-80deg);
+  }
+  20% {
+    opacity: 1;
+  }
+  60% {
+    transform: perspective(800px) rotateX(20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(800px) rotateX(0);
+  }
+}
+
+
+/* Style the links inside the sidenav */
+#mySidenav a {
+  position: absolute; /* Position them relative to the browser window */
+  left: -120px; /* Position them outside of the screen */
+  transition: 0.3s; /* Add transition on hover */
+  padding: 14px; /* 14px padding */
+  width: 130px; /* Set a specific width */
+  text-decoration: none; /* Remove underline */
+  font-size: 20px; /* Increase font size */
+  color: white; /* White text color */
+  border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
+  margin-top: 20px;
+  z-index: 99;
+}
+
+#mySidenav a:hover {
+  left: 0; /* On mouse-over, make the elements appear as they should */
+
+}
+
+/* The about link: 20px from the top with a green background */
+#home {
+  top: 690px;
+  background-color: #04AA6D;
+}
+
+#notice {
+  top: 750px;
+  background-color: #2196F3; /* Blue */
+}
+
+#projects {
+  top: 810px;
+  background-color: #f44336; /* Red */
+}
+
+#time {
+  top: 870px;
+  background-color: #555 /* Light Black */
+}
+
+/* Style buttons */
+.btn1 {
+  background-color: cornflowerblue; /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 100px 0px; /* Some padding */
+  font-size: 50px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  margin-top: 20px;
+  border-radius: 8px;
+  margin-left: 60px;
+  min-width: 400px;
+
+}
+
+/* Darker background on mouse-over */
+.btn1:hover {
+  background-color: darkblue;
+}
+
+@media (max-width: 768px){  
+  .carousel-caption {
+    top: 20%;
+  }
+  .carousel-caption h1{
+    font-size: 220%;
+  }
+  .carousel-caption h3{   
+    font-size: 140%;
+    padding-bottom: 0.2rem;
+  }
+  .carousel-caption .btn{   
+    font-size: 95%;
+    padding: 8px 14px;
+  }
+}
+@media (max-width: 576px){
+  .carousel-caption {
+    top: 10%;
+  }
+  .carousel-caption h1{
+    font-size: 150%;
+  }
+  .carousel-caption h3{   
+    font-size: 110%;    
+  }
+  .carousel-caption .btn {    
+    font-size: 90%;
+    padding: 4px 8px;
+  } 
+}
+/*sidetab*/
+.state1 {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background-color: #eee;
+  transition: 0.5s;
+  padding-top: 60px;
+  text-align:center;
+  overflow-y: scroll; 
+}
+.state1::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+.state1::-webkit-scrollbar
+{
+	width: 10px;
+  height:7px;
+	background-color: #F5F5F5;
+}
+
+.state1::-webkit-scrollbar-thumb
+{
+	background-color: rgb(54, 201, 238);	
+	background-image: -webkit-linear-gradient(45deg,
+	                                          rgba(255, 255, 255, .2) 25%,
+											  transparent 25%,
+											  transparent 50%,
+											  rgba(255, 255, 255, .2) 50%,
+											  rgba(255, 255, 255, .2) 75%,
+											  transparent 75%,
+											  transparent)
+}
+.state1 a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+
+
+}
+
+.state1 a:hover{
+  color: #f1f1f1;
+}
+
+.state1 .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .state1 {padding-top: 15px;}
+  .state1 a {font-size: 18px;}
+}
+
+/* Style the tab */
+.tab {
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  overflow: auto;
+  
+}
+
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  display:flex;
+  
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  overflow-y: scroll;
+}
+.tabcontent::-webkit-scrollbar {
+  display: none;
+}
+
+.header {
+  border-bottom: 3px solid black;
+  background-color: #4bcbfe;
+  color: white;
+  text-transform:uppercase;
+  text-shadow: 1px 2px 2px rgb(0, 0, 0);
+}
+.card-header{
+  border-bottom: 3px solid rgba(0, 0, 0, 0.514);
+  background-color: #0da8ef73;
+  overflow-x: scroll;
+  text-transform:uppercase;
+}
+/*scrollbar*/
+.card-header::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+.card-header::-webkit-scrollbar
+{
+	width: 2px;
+  height:7px;
+	background-color: #F5F5F5;
+}
+
+.card-header::-webkit-scrollbar-thumb
+{
+	background-color: rgb(8, 5, 0);	
+	background-image: -webkit-linear-gradient(45deg,
+	                                          rgba(255, 255, 255, .2) 25%,
+											  transparent 25%,
+											  transparent 50%,
+											  rgba(255, 255, 255, .2) 50%,
+											  rgba(255, 255, 255, .2) 75%,
+											  transparent 75%,
+											  transparent)
+}
+/*///////////////////////////*/
+input[type=search] {
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 130px;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  border: none;
+  padding: 5px;
+
+}
+input[type=search]:focus {
+  width: 100%;
+}
+.btn-outline-dark{
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+/**/
+.vertical-menu {
+  width: 100%; /* Set a width if you like */
+}
+
+
+.vertical-menu a:hover {
+  background-color: #ccc; /* Dark grey background on mouse-over */
+}
+
+.vertical-menu a.active {
+  background-color: #04AA6D; /* Add a green color to the "active/current" link */
+  color: white;
+}
+.card{
+  border-radius: 10px;
+  overflow-x: scroll;
+  margin-bottom: 2%;
+ 
+}
+.card::-webkit-scrollbar {
+  display: none;
+}
+
+.mauxanh{
+  background-color: greenyellow;
+}
+
+.btn-dark{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  max-width: 80%;
+}
+.btn-light{
+  margin-top: 5px;
+  margin-bottom: 5px;
+ 
+  background-color: transparent;
+}
+
+
+/*///////////////////*/
+
+/* Full-width input fields */
+input[type=nameHome] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #5cc;
+  box-sizing: border-box;
+}
+input[type=nameRoom]{
+  width: 73%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Extra styles for the cancel button */
+.btnadd {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+  
+.btnadd1 {
+  width: 100%;
+  padding: 10px 18px;
+  background-color: #32b926;
+  border-radius: 5px;
+  color: white;
+}
+#add_device_modal{
+  width: auto;
+  display: inline-block;
+
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 10%;
+  border-radius: 50%;
+}
+
+.container1 {
+  padding: 16px;
+}
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The formAddHome (background) */
+.formAddHome {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 101; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+} 
+
+
+/* formAddHome Content/Box */
+.formAddHome-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.5s;
+  animation: animatezoom 0.5s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .btnadd {
+     width: 100%;
+  }
+}
+.btncus{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 5px;
+  padding: 7px;
+  min-width: 40px; 
+  background-color: rgb(255, 255, 255); 
+}
+.btncus:hover {
+  background-color: rgb(139, 241, 113); /* Dark grey background on mouse-over */
+}
+/*////////////////////btn add room///////////////////////////////*/
+.buttons_added {
+    opacity:1;
+    display:inline-block;
+    display:-ms-inline-flexbox;
+    display:inline-flex;
+    white-space:nowrap;
+    padding: 12px;
+    width: 13%;
+    min-width: 135px;
+   
+}
+.form-inde {
+    display:-ms-inline-flexbox;
+    display:inline-flex;
+    display: inline-block;
+    position:relative;
+    width:3rem;
+    padding:12px;
+    text-shadow:1px 1px 1px #fff;
+    border:1px solid #ddd;
+
+}
+.form-inde:focus,.input-text:focus {
+    outline:none;
+
+}
+
+.form-inde.minus {
+    border-radius:0px 0 0 10px;
+    background-color: cornflowerblue;
+    
+    
+}
+.form-inde.plus {
+    border-radius:0 10px 0px 0;
+    background-color: cornflowerblue;
+    
+}
+.input-qty {
+    display: inline-block;
+    text-align:center;
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+    border-left:0;
+    border-right:0;
+    padding:0;
+    width: 100%;
+}
+.input-qty::-webkit-outer-spin-button,.input-qty::-webkit-inner-spin-button {
+    -webkit-appearance:none;
+    margin:0;
+}
+input[type="numbershow"]{
+   outline:none;
+}
+input[type="numbershow"]::-moz-focus-inner {
+   border: 0;
+}
+
+/*///////////////////////*/
+.form-select {
+    display:-ms-inline-flexbox;
+    display:inline-flex;
+    display: inline-block;
+    position:relative;
+    text-shadow:1px 1px 1px #fff;
+    box-shadow: none;
+
+
+}
+.form-select select{
+    content: '25BC';
+    height: 100%;
+    width: 100%;
+    padding: 12px;
+    border:1px solid #47aedb87;
+
+}
+ .form-select:hover::after {
+   color: Gainsboro;
+ }
+select::after {
+  
+   position: absolute;
+   top: 0;
+   right: 0;
+   background: DodgerBlue;
+   cursor: pointer;
+   pointer-events: none;
+   -webkit-transition: .25s all ease;
+   -o-transition: .25s all ease;
+   transition: .25s all ease;
+   color: white;
+ }
+
+  select {
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   -ms-appearance: none;
+   appearance: none;
+   outline: 0;
+   box-shadow: none;
+   border: 0 !important;
+   background: #0084c1;
+   background-image: none;
+   border-radius: 0px 15px 0px 0px;
+ }
+.form-select {
+   position: relative;  
+ }
+ select {
+   flex: 1;
+   padding: 1em;
+   color: #fff;
+   cursor: pointer;
+ }
+ label{
+  margin-bottom: -0.2rem;
+  margin-top: 0.5%;
+ }
+ 
+ /*hien thi thong bao*/
+ .example button {
+  float: left;
+  background-color: #4E3E55;
+  color: white;
+  border: none;
+  box-shadow: none;
+  font-size: 17px;
+  font-weight: 500;
+  font-weight: 600;
+  border-radius: 3px;
+  padding: 15px 35px;
+  margin: 26px 5px 0 5px;
+  cursor: pointer; 
+}
+.example button:focus{
+  outline: none; 
+}
+.example button:hover{
+  background-color: #33DE23; 
+}
+.example button:active{
+  background-color: #81ccee; 
+}
+#defaultOpen{
+  background-color: #4c67d3ef;
+  color: white;
+}
+#defaultOpen:hover {
+  background-color: rgb(247, 103, 103); /* Dark grey background on mouse-over */
+}
+#tabset{
+  background-color: #4c6783d4;
+  color: white;
+}
+
+#tabset:hover {
+  background-color: rgb(139, 241, 113); /* Dark grey background on mouse-over */
+}
+.maubang_0{
+  background-color: rgb(205, 210, 223);
+  text-transform:uppercase;
+  color: rgb(0, 0, 0);
+
+}
+.table-bordered td, .table-bordered th {
+  border: 1px solid #03030371;
+}
+.maubang_1{
+  background-color: rgb(226, 238, 238);
+  text-transform:uppercase;
+  color: black;
+
+}
+
+.col1{ 
+  margin-left: 1%;
+  width: 32%;
+}
+.btncusbotron{
+  margin-left: 20%;
+  color: #04AA6D;
+}
+.btncheck{
+  width: 95%;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background-color: #9adee7;
+  display: inline-block;
+}
